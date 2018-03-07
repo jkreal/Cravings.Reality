@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/light-veneer.png);
+}
+
+.carouselImages {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.searchBar {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
