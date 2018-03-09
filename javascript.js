@@ -16,29 +16,39 @@
 //   console.log(response);
 // });
 
-var arr = [];
-
-$.ajax({
-	url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?query=burger', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
-	method: 'GET', // The HTTP Method
-	data: {}, // Additional parameters here
-	dataType: 'json',
-	error: function(err) { console.log(err); },
-	beforeSend: function(xhr) {
-		xhr.setRequestHeader("X-Mashape-Authorization", "f1DmFEzv4smshk3RQgAed5kwAGr0p1JlMf6jsn8ht3R07iwPwK"); // Enter here your Mashape key
-	},
-	success: function(data) { 
-		console.log(data.results[1]);
-		for(var i = 0; i < data.results.length; i++) {
-			console.log(i);
-			arr.push(data.results[i].title);
-			console.log(arr[i]);
-		} 
-	console.log(data);
-	},
-});
-
-
+var recipeTitle = [];
+var recipeID = [];
+var recipeImage = [];
+$("#searchedItem").on('click', function (event) {
+	event.preventDefault();
+	var inputItem = $("#user-input").val();
+	var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?query=" + inputItem;
+	$.ajax({
+		url: queryURL , // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+		method: 'GET', // The HTTP Method
+		data: {}, // Additional parameters here
+		dataType: 'json',
+		error: function (err) { console.log(err); },
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader("X-Mashape-Authorization", "f1DmFEzv4smshk3RQgAed5kwAGr0p1JlMf6jsn8ht3R07iwPwK"); // Enter here your Mashape key
+		},
+		success: function (response) {
+			var result = response.results
+			console.log("test", response.results[1]);
+			for (var i = 0; i < result.length; i++) {
+				recipeTitle.push(result[i].title);
+				recipeID.push(result[i].id);
+				recipeImage.push(result[i].imageUrls)
+				// console.log("what is passed to the array", arr[i]);
+			}
+			console.log("all data",response);
+			console.log(recipeTitle)
+			console.log(recipeID)
+			console.log(recipeImage)
+			
+		},
+		function()
+	})});
 
 
 
