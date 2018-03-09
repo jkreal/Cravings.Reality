@@ -1,31 +1,33 @@
-// t4a2y6c96t4m3mffyc4fmvccs
-
-
+// on click for sumbit nutton
 $("#submitPress").on('click', function (event) {
 	event.preventDefault();
+	// user input item adding to variable
 	var inputItem = $("#user-input").val();
-	var queryURL = "http://api.walmartlabs.com/v1/search?query=" + inputItem + "&format=json&apiKey=t4a2y6c96t4m3mffyc4fmvcc";
-	console.log(queryURL);
+	// api url pulling from food only queries
+	var queryURL = "http://api.walmartlabs.com/v1/search?query=" + inputItem + "&format=json&apiKey=t4a2y6c96t4m3mffyc4fmvcc&categoryId=976759";
 	$.ajax({
 		url: queryURL,
 		method: "GET",
 		crossDomain: true
 	}).then(function (response) {
-		console.log("response", response);
+		// adding 10 results from the api in this variable
 		var results = response.items;
+		console.log(response);
+		// loop through all 10 items to grab info individualy
 		for (var i = 0; i < results.length; i++) {
-				var price = results[i].salePrice;
-				var foodName = results[i].name;
-				var thumbNail = results[i].imageEntities[0].thumbnailImage;
-				addItem(thumbNail, foodName, price);
+			var price = results[i].salePrice;
+			var foodName = results[i].name;
+			var thumbNail = results[i].thumbnailImage;
+			// running function to add items and their attributes to the page
+			addItem(thumbNail, foodName, price);
 		}
 	}
 
 
-		);
+	);
 
 });
-
+// function to add items and their attributes to the page
 function addItem(thumbNail, foodName, price) {
 	$("#addedItems").append("<tr><td><img src='" + thumbNail + "' /></td><td>" + foodName + "</td><td>" + price + "</td></tr>");
 };
