@@ -16,15 +16,15 @@
 //   console.log(response);
 // });
 
-var recipeTitle = [];
-var recipeID = [];
-var recipeImage = [];
-$("#searchedItem").on('click', function (event) {
+var ingredients = []
+var baseURL = "https://spoonacular.com/recipeImages/"
+$("#searchedRecipe").on('click', function (event) {
+
 	event.preventDefault();
 	var inputItem = $("#user-input").val();
 	var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?query=" + inputItem;
 	$.ajax({
-		url: queryURL , // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+		url: queryURL, // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
 		method: 'GET', // The HTTP Method
 		data: {}, // Additional parameters here
 		dataType: 'json',
@@ -33,23 +33,43 @@ $("#searchedItem").on('click', function (event) {
 			xhr.setRequestHeader("X-Mashape-Authorization", "f1DmFEzv4smshk3RQgAed5kwAGr0p1JlMf6jsn8ht3R07iwPwK"); // Enter here your Mashape key
 		},
 		success: function (response) {
-			var result = response.results
-			console.log("test", response.results[1]);
-			for (var i = 0; i < result.length; i++) {
-				recipeTitle.push(result[i].title);
-				recipeID.push(result[i].id);
-				recipeImage.push(result[i].imageUrls)
+			//clears the recipe table
+			$("#recipe").empty();
+			// console.log("test", response.results[1]);
+			for (var i = 0; i < response.results.length; i++) {
+				var recipeTitle = response.results[i].title;
+				var recipeID = response.results[i].id;
+				var recipeImage = response.results[i].imageUrls;
 				// console.log("what is passed to the array", arr[i]);
+				addRecipe(recipeTitle, recipeID);
 			}
-			console.log("all data",response);
-			console.log(recipeTitle)
-			console.log(recipeID)
-			console.log(recipeImage)
-			
 		},
-		function()
-	})});
-
+	})
+});
+function addRecipe(recipeTitle, recipeID) {
+	$("#recipe").append('<tr><td class="recipeTitle" data-recipe-id="' + recipeID + '">' + recipeTitle + '</td></tr>');
+}
+$("body").on("click", ".recipeTitle", function (){
+	var recipeID = $(this).attr("data-recipe-id");
+	console.log("recipe", recipeID)
+	$.ajax({
+		url:"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + recipeID + "/information",
+		method: 'GET',
+		data: {},
+		dataType: 'json',
+		error: function (err) { console.log(err); },
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader("X-Mashape-Authorization", "f1DmFEzv4smshk3RQgAed5kwAGr0p1JlMf6jsn8ht3R07iwPwK"); // Enter here your Mashape key
+		},
+		success: function (response){
+			for (var i = 0; i < response.extendedIngredients.length; i++){
+				ingredients.push(response.extendedIngredients[i].name)
+				// console.log("ingrediants", response.extendedIngredients[i].name)
+			}
+			// console.log(response);
+		}
+	})
+})
 
 
 
