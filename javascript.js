@@ -16,7 +16,13 @@
 //   console.log(response);
 // });
 
-var ingredients = []
+var currentRecipe = {
+	title:"",
+	instructions:"",
+	ingredients:[],
+	image:"",
+
+}
 var baseURL = "https://spoonacular.com/recipeImages/"
 $("#searchedRecipe").on('click', function (event) {
 
@@ -63,15 +69,16 @@ $("body").on("click", ".recipeTitle", function (){
 		},
 		success: function (response){
 			for (var i = 0; i < response.extendedIngredients.length; i++){
-				ingredients.push(response.extendedIngredients[i].name)
+				currentRecipe.ingredients.push(response.extendedIngredients[i].name)
 				// console.log("ingrediants", response.extendedIngredients[i].name)
 			}
 			// console.log(response);
+			console.log(currentRecipe.ingredients)
 		}
 	})
 })
 
-
+//TODO 
 
 
 
