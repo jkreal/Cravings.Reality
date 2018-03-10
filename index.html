@@ -2,6 +2,29 @@
 <html lang="en">
 
 <head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+
+<body>
+	<form id="form">
+		<label for="user-input">Add Item here</label>
+		<br>
+		<input type="text" id="user-input">
+		<input id="submitPress" type="submit" value="Submit" class="btn btn-default">
+	</form>
+	<div>
+		<table>
+			<tbody id="addedItems"></tbody>
+		</table>
+	</div>
+	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+	<script src="script.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -112,6 +135,7 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
