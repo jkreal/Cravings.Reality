@@ -11,87 +11,143 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Link to stylesheet -->
 	<link rel="stylesheet" href="assets/css/stylesheet.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="./assets/css/animate.css">
 </head>
 
 <body>
 
 	<!-- <div class="mainContainer"> -->
-		<nav class="navbar navbar-default">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Spencer Daniels</a>
-				</div>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-				</div>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Spencer Daniels</a>
 			</div>
-		</nav>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-		<div class="row">
-			<!-- left column with recipe results -->
-			<div class="col-md-3">
-				<div class="panel panel-default left-panel">
-					<div class="panel-body">
-						<div class="page-header">
-							<h2>Cravings/Recipes
-							</h2>
-						</div>
-
-						<div class="recipeList">
-
-						</div>
-					</div>
-				</div>
 			</div>
+		</div>
+	</nav>
 
-			<!-- Middle column -->
-			<div class="col-md-6">
-				<div class="panel panel-default center-panel">
-					<div class="panel-body">
-
-						<div class="row">
-							<div class="col-md-12">
-								<div class="page-header">
-									<h2>
-										Items to Choose From
-									</h2>
-								</div>
-
-								<div class="container neededContainer">
-									<span class="needed">
-										<h2>You need: _______</h2>
-									</span>
-									<button class="needed" id="alreadyHave">Already Have</button>
-								</div>
-
-								<div class="container listItems">
-									<table>
-										<tbody id="addedItems">
-
-										</tbody>
-									</table>
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3 col-md-3">
-				<div class="panel panel-default right-panel">
-					<div class="panel-body">
-						<h2>
-							List
+	<div class="row">
+		<!-- left column with recipe results -->
+		<div class="col-md-3">
+			<div class="panel panel-default left-panel">
+				<div class="panel-body">
+					<div class="page-header">
+						<h2>Cravings/Recipes
 						</h2>
+					</div>
 
-
+					<div class="recipeList" id="recipeList">
 
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- Middle column -->
+		<div class="col-md-6">
+			<div class="panel panel-default center-panel">
+				<div class="panel-body">
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="page-header">
+								<h2 class="animated bounce">
+									Items to Choose From
+								</h2>
+							</div>
+
+							<div class="container neededContainer">
+								<span class="needed">
+									<h2>You need: _______</h2>
+								</span>
+								<button class="needed btn btn-success" id="alreadyHave">Already Have</button>
+							</div>
+
+							<div class="container listItems">
+
+								<table style="width:100%" >
+									<tr>
+										<th>Firstname</th>
+										<th>Lastname</th>
+										<th>Age</th>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Smith</td>
+										<td>50</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Jackson</td>
+										<td>94</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Doe</td>
+										<td>80</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Doe</td>
+										<td>80</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Doe</td>
+										<td>80</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Doe</td>
+										<td>80</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Doe</td>
+										<td>80</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Doe</td>
+										<td>80</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Doe</td>
+										<td>80</td>
+									</tr>
+									<tr>
+										<td class="imageData" ><img class="listImage" src="./assets/images/captain-placeholder.jpg" alt="CAPTAIN Placeholder"></td>
+										<td>Doe</td>
+										<td>80</td>
+									</tr>
+								</table>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3 col-md-3">
+			<div class="panel panel-default right-panel">
+				<div class="panel-body">
+					<h2>
+						List
+					</h2>
+
+					<div class="container addedItems" id="addedList">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- </div> -->
 
 	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
