@@ -30,12 +30,12 @@ body {
 }
 
 .right-panel, .left-panel {
-	height: 70vh;
+	height: 85vh;
 	text-align: center;
 }
 
 .center-panel {
-	height: 60vh;
+	height: 90vh;
 	text-align: center;
 }
 
@@ -43,10 +43,10 @@ body {
 	position: relative;
 }
 
-.recipeList {
+.recipeList, .addedItems {
 	background-color: red;
 	width: 100%;
-	height: 55vh;
+	height: 70vh;
 }
 
 .neededContainer {
@@ -65,11 +65,37 @@ margin-bottom: 8px;
 .listItems {
 	width: 100%;
 	background-color: red;
-	height: 40vh;
+	height: 75vh;
 }
 
 .mainContainer {
 	display: flex;
 	justify-content: space-evenly;
 	margin-left: 200px;
+
+}
+
+.shoppingList {
+	width: 100%;
+}
+
+table td {
+	border: 1px solid black;
+	text-align: center;
+}
+
+td {
+	height: 7vh;
+	width: 40%;
+}
+
+.listImage {
+	width: 33%;
+
+}
+
+.image-data {
+	width: 33%;
+
+
 }
