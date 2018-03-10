@@ -17,11 +17,11 @@ $("#submitPress").on('click', function (event) {
 
 	dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
 		// adding firebase items to variables
-		foodItem = [snapshot.val().foodItem];
-		foodId = snapshot.val().foodId;
+		foodItem = snapshot.val().ingredients;
+		foodId = snapshot.val().title;
 
-		console.log(snapshot.val().foodItem);
-		console.log(snapshot.val().foodId);
+		console.log(foodItem);
+		console.log(foodId);
 	});
 	// onclick food items to pull from api
 	$("#itemArray").on("click", function () {
