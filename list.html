@@ -15,7 +15,7 @@
 
 <body>
 
-	<div class="container">
+	<!-- <div class="mainContainer"> -->
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
@@ -29,32 +29,51 @@
 
 		<div class="row">
 			<!-- left column with recipe results -->
-			<div class="col-lg-3 col-md-3">
+			<div class="col-md-3">
 				<div class="panel panel-default left-panel">
 					<div class="panel-body">
 						<div class="page-header">
-							<h2>Gotta
-								<small>Fresh</small>
+							<h2>Cravings/Recipes
 							</h2>
+						</div>
+
+						<div class="recipeList">
+
 						</div>
 					</div>
 				</div>
 			</div>
-			
+
 			<!-- Middle column -->
-			<div class="col-lg-6 col-md-6">
+			<div class="col-md-6">
 				<div class="panel panel-default center-panel">
 					<div class="panel-body">
 
 						<div class="row">
-							<div class="col-lg-12 col-md-12">
+							<div class="col-md-12">
 								<div class="page-header">
 									<h2>
-										Be
-										<small>as</small>
+										Items to Choose From
 									</h2>
 								</div>
+
+								<div class="container neededContainer">
+									<span class="needed">
+										<h2>You need: _______</h2>
+									</span>
+									<button class="needed" id="alreadyHave">Already Have</button>
+								</div>
+
+								<div class="container listItems">
+									<table>
+										<tbody id="addedItems">
+
+										</tbody>
+									</table>
+
+								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -64,15 +83,18 @@
 				<div class="panel panel-default right-panel">
 					<div class="panel-body">
 						<h2>
-							Fresh
-							<small>F***</small>
+							List
 						</h2>
+
+
+
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	<!-- </div> -->
 
+	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
