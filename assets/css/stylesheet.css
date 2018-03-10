@@ -13,9 +13,17 @@ body {
     
 }
 
-.searchBar {
+.bottomSearchBar {
     width: 60%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.carousel-control {
+    /* opacity: 10; */
+    /*margin-left: 120px;
+    margin-right: 120px; */
+    background-color: yellow;
+
 }
