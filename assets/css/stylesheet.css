@@ -3,7 +3,8 @@
 }
 
 body {
-    background-image: url(../images/light-veneer.png);
+		background-image: url(../images/light-veneer.png);
+		align-content: center;
 }
 
 .carouselImages {
@@ -22,17 +23,44 @@ body {
 .right-panel, .left-panel {
 	height: 70vh;
 	text-align: center;
-	border-radius: 20px;
-	border-color: black;
 }
 
 .center-panel {
 	height: 60vh;
 	text-align: center;
-	border-radius: 20px;
-	border-color: black;
 }
 
 [class*='col-'] {
 	position: relative;
+}
+
+.recipeList {
+	background-color: red;
+	width: 100%;
+	height: 55vh;
+}
+
+.neededContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	width: 100%;
+	justify-content: space-evenly;
+	height: 5vh;
+}
+
+#alreadyHave {
+margin-bottom: 8px;
+}
+
+.listItems {
+	width: 100%;
+	background-color: red;
+	height: 40vh;
+}
+
+.mainContainer {
+	display: flex;
+	justify-content: space-evenly;
+	margin-left: 200px;
 }
