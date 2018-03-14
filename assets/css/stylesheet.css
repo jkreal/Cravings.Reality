@@ -59,7 +59,7 @@ body {
 }
 
 h2 {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Shadows Into Light', cursive;
 }
 
 [class*='col-'] {
@@ -93,7 +93,7 @@ margin-bottom: 8px;
 
 .listItems {
 	width: 100%;
-	background-color: grey;
+	background-color: whitesmoke;
 	min-height: 75vh;
 	height: auto;
 }
@@ -144,6 +144,7 @@ td {
 .productTable td {
 	height: 7vh;
 	width: 40%;
+	border: 1px solid black;
 }
 
 .listImage {
