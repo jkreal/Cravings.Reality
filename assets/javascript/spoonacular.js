@@ -154,12 +154,10 @@ $("body").on('click', ".defaultRecipe", function(){
 });
 
 $('body').on('click', ".carouselImages", function(){
-    
+
     var inputItem = $(this).attr("alt");
     APICall(inputItem);
-    console.log(inputItem);
-})
-
-//TODO 
-
+		console.log(inputItem);
+		
+});
 
