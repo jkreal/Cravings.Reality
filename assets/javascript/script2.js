@@ -55,7 +55,6 @@ $(document).ready(function () {
 				}
 			}
 
-
 			);
 		});
 	};
@@ -65,6 +64,7 @@ $(document).ready(function () {
 	function addItem(thumbNail, foodName, price) {
 		$("#addedItems").append("<tr><td><img src='" + thumbNail + "' /></td><td>" + foodName + "</td><td>" + price + "</td></tr>");
 	};
+
 	function appendItems() {
 		for (var l = 0; l < foodItem.length; l++) {
 			console.log("food Items", foodItem[l]);

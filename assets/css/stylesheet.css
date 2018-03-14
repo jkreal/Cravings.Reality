@@ -7,31 +7,50 @@ body {
 		align-content: center;
 }
 
+.heading {
+	font-family: 'Dancing Script', cursive;
+	color: #827E38;
+	size: 100px;
+}
+
 .carouselImages {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.bottomSearchBar {
+.carouselText {
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+.searchBar {
     width: 60%;
     display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 0px;
 }
 
 
 .carousel-control {
-    /* opacity: 10; */
-    /*margin-left: 120px;
-    margin-right: 120px; */
-    background-color: yellow;
+    opacity: .1;
+    margin-left: 110px;
+    margin-right: 110px;
+	background-color: lightgray;
+	width: 10%;
 
 }
 
 .right-panel, .left-panel {
 	height: 85vh;
 	text-align: center;
+}
+
+.left-recipe-panel {
+	min-height: 58vh;
+	height: auto;
+	/* height: 58vh; */
+	text-align: left;
+	padding: 0, 0, 0, 20px;
 }
 
 .center-panel {
@@ -43,10 +62,16 @@ body {
 	position: relative;
 }
 
-.recipeList, .addedItems {
-	background-color: grey;
+.recipeList {
+	/* background-color: red; */
 	width: 100%;
-	height: 70vh;
+	height: auto;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: 'Gloria Hallelujah', cursive;
+	/* font-family: 'Dancing Script', cursive; */
+	/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+	color: #827E38;
 }
 
 .neededContainer {
@@ -72,6 +97,27 @@ margin-bottom: 8px;
 	display: flex;
 	justify-content: space-evenly;
 	margin-left: 200px;
+}
+
+
+.footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+    line-height: 60px;
+	background-color: rgb(139, 134, 62);
+	border-top: 3px solid  #827E38;
+	text-align: center;
+}
+
+.ingredientsListStyle {
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #827E38;
+}
+
+.instructionsStyle {
+	color: #827E38;
 }
 
 .shoppingList {
