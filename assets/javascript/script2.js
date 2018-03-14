@@ -1,34 +1,39 @@
-var foodItem = [];
-var foodId = null;
+var config = {
+	apiKey: "AIzaSyAML7xzBjrJan2eVVRSqo1H9idSlUB5gpY",
+	authDomain: "recipe-project-24f9b.firebaseapp.com",
+	databaseURL: "https://recipe-project-24f9b.firebaseio.com",
+	projectId: "recipe-project-24f9b",
+	storageBucket: "recipe-project-24f9b.appspot.com",
+	messagingSenderId: "876746465234"
+};
+firebase.initializeApp(config);
+var dataRef = firebase.database();
 
-// on click for sumbit change for loading page
-$("#submitPress").on('click', function (event) {
-	event.preventDefault();
+$(document).ready(function () {
 
-	var config = {
-		apiKey: "AIzaSyAML7xzBjrJan2eVVRSqo1H9idSlUB5gpY",
-		authDomain: "recipe-project-24f9b.firebaseapp.com",
-		databaseURL: "https://recipe-project-24f9b.firebaseio.com",
-		projectId: "recipe-project-24f9b",
-		storageBucket: "recipe-project-24f9b.appspot.com",
-		messagingSenderId: "876746465234"
-	};
-	firebase.initializeApp(config);
+	var foodItem = [];
+	var foodId = null;
 
-	dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-		// adding firebase items to variables
-		foodItem = snapshot.val().ingredients;
-		foodId = snapshot.val().title;
+	// on click for sumbit change for loading page
+	function findingItems(event) {
 
-		console.log(foodItem);
-		console.log(foodId);
-	});
-	// onclick food items to pull from api
-	$("#itemArray").on("click", function () {
-		for (var j = 0; j > foodItem.length; j++) {
+		dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function (snapshot) {
+			// adding firebase items to variables
+			foodItem = snapshot.val().ingredients;
+			foodId = snapshot.val().title;
+			console.log("line 24 snap", snapshot.val().ingredients);
+			console.log(foodItem);
+			console.log(foodId);
+			appendItems();
+		});
+		// onclick food items to pull from api
+		$(document).on("click", ".arrayItems", function () {
 
+			var loadingImg = $("<div>");
+			loadingImg.text('loading...');
+			$("#addedItems").append(loadingImg);
 
-			var inputItem = foodItem[j];
+			var inputItem = $(this).text();
 			// api url pulling from food only queries
 			var queryURL = "http://api.walmartlabs.com/v1/search?query=" + inputItem + "&format=json&apiKey=t4a2y6c96t4m3mffyc4fmvcc&categoryId=976759";
 
@@ -37,6 +42,7 @@ $("#submitPress").on('click', function (event) {
 				method: "GET",
 				crossDomain: true
 			}).then(function (response) {
+				$('#addedItems').html("");
 				// adding 10 results from the api in this variable
 				var results = response.items;
 				// loop through all 10 items to grab info individualy
@@ -51,13 +57,24 @@ $("#submitPress").on('click', function (event) {
 
 
 			);
+		});
+	};
+	// function to add items and their attributes to the page
+	findingItems();
+
+	function addItem(thumbNail, foodName, price) {
+		$("#addedItems").append("<tr><td><img src='" + thumbNail + "' /></td><td>" + foodName + "</td><td>" + price + "</td></tr>");
+	};
+	function appendItems() {
+		for (var l = 0; l < foodItem.length; l++) {
+			console.log("food Items", foodItem[l]);
+			$("#recipeList").append("<p class='arrayItems'>" + foodItem[l] + "</p>");
 		};
-	});
+	};
 });
-// function to add items and their attributes to the page
-function addItem(thumbNail, foodName, price) {
-	$("#addedItems").append("<tr><td><img src='" + thumbNail + "' /></td><td>" + foodName + "</td><td>" + price + "</td></tr>");
-};
 
 
-// SessionStorage.getItem("timeStamp")
+// add title to recipe
+// add hover color to the items to select on the cernter console
+// add items to list colume
+// add button to purchase items at walmart
