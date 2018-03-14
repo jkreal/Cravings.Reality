@@ -30,7 +30,6 @@ body {
     margin-right: 0px;
 }
 
-
 .carousel-control {
     opacity: .1;
     margin-left: 110px;
@@ -54,15 +53,19 @@ body {
 }
 
 .center-panel {
-	height: 90vh;
+	height: auto;
+	min-height: 90vh;
 	text-align: center;
+}
+
+h2 {
+	font-family: 'Shadows Into Light', cursive;
 }
 
 [class*='col-'] {
 	position: relative;
 }
 
-<<<<<<< HEAD
 .recipeList {
 	/* background-color: red; */
 	width: 100%;
@@ -73,12 +76,6 @@ body {
 	/* font-family: 'Dancing Script', cursive; */
 	/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 	color: #827E38;
-=======
-.recipeList, .addedItems {
-	background-color: grey;
-	width: 100%;
-	height: 70vh;
->>>>>>> 3aa719e711941c82b63fe2c7cae9cbb6bf148005
 }
 
 .neededContainer {
@@ -96,8 +93,9 @@ margin-bottom: 8px;
 
 .listItems {
 	width: 100%;
-	background-color: grey;
-	height: 75vh;
+	background-color: whitesmoke;
+	min-height: 75vh;
+	height: auto;
 }
 
 .mainContainer {
@@ -106,7 +104,6 @@ margin-bottom: 8px;
 	margin-left: 200px;
 }
 
-<<<<<<< HEAD
 .footer {
     position: relative;
     bottom: 0px;
@@ -125,32 +122,35 @@ margin-bottom: 8px;
 
 .instructionsStyle {
 	color: #827E38;
-=======
+}
+
 .shoppingList {
 	width: 100%;
 }
 
 table td {
+
+}
+
+td {
+
+}
+
+.productTable {
 	border: 1px solid black;
 	text-align: center;
 }
 
-td {
+.productTable td {
 	height: 7vh;
 	width: 40%;
+	border: 1px solid black;
 }
 
 .listImage {
 	width: 33%;
-
 }
 
 .image-data {
 	width: 33%;
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 40554c728f609ab72e7ca33e9223c5e464b1c71b
->>>>>>> 3aa719e711941c82b63fe2c7cae9cbb6bf148005
 }
