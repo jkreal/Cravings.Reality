@@ -19,6 +19,7 @@
 
 
   // Initialize Firebase
+  var inputItem;
   var config = {
     apiKey: "AIzaSyAML7xzBjrJan2eVVRSqo1H9idSlUB5gpY",
     authDomain: "recipe-project-24f9b.firebaseapp.com",
@@ -38,17 +39,26 @@ var currentRecipe = {
     instructions: "",
     ingredients: [],
     image: "",
+    units: []
 
 }
 
 // added by spencer
 $('#recipeDetails').hide();
 var baseURL = "https://spoonacular.com/recipeImages/"
+
+
 $("#searchedRecipe").on('click', function (event) {
+    inputItem = $("#user-input").val();
+    APICall(inputItem);
+});
+function APICall(itemName) {
+    $('#defaultRecipes').hide();
+    $('#recipeList').empty();
 
     event.preventDefault();
-    var inputItem = $("#user-input").val();
-    var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?query=" + inputItem;
+    // var inputItem = $("#user-input").val();
+    var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?query=" + itemName;
     $.ajax({
         url: queryURL, // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
         method: 'GET', // The HTTP Method
@@ -61,6 +71,7 @@ $("#searchedRecipe").on('click', function (event) {
         success: function (response) {
             //clears the recipe table
             $("#recipe").empty();
+            $('#recipeList').html('<tr><th><h3>Select Your Craving!<h3></th></tr>');
             // console.log("test", response.results[1]);
             for (var i = 0; i < response.results.length; i++) {
                 var recipeTitle = response.results[i].title;
@@ -71,10 +82,15 @@ $("#searchedRecipe").on('click', function (event) {
             }
         },
     })
-});
-function addRecipe(recipeTitle, recipeID) {
-    $("#recipe").append('<tr><td class="recipeTitle" data-recipe-id="' + recipeID + '">' + recipeTitle + '</td></tr>');
+
 }
+
+function addRecipe(recipeTitle, recipeID) {
+    $("#recipeList").append('<tr><td class="recipeTitle" data-recipe-id="' 
+    + recipeID + '"><span><img src="assets/images/restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle.png">' 
+    + " " + recipeTitle + '</span></td></tr>');
+}
+
 $("body").on("click", ".recipeTitle", function () {
 
     // added by spencer
@@ -83,6 +99,7 @@ $("body").on("click", ".recipeTitle", function () {
     currentRecipe.ingredients = [];
     currentRecipe.image = "";
     $('#image').empty();
+    currentRecipe.units = [];
     $('#ingredientsList').empty();
     $('#recipeDetails').show();
 
@@ -103,6 +120,7 @@ $("body").on("click", ".recipeTitle", function () {
                 currentRecipe.image = response.image;
                 currentRecipe.instructions=response.instructions;
                 currentRecipe.title= response.title;
+                currentRecipe.units.push(response.extendedIngredients[i].originalString);
                 
                 // console.log("ingrediants", response.extendedIngredients[i].name)
             }
@@ -110,12 +128,12 @@ $("body").on("click", ".recipeTitle", function () {
             console.log(currentRecipe.ingredients)
             // added by spencer
             $('#title').html("<h1>" + currentRecipe.title + "</h1>");
-            for (var i = 0; i < currentRecipe.ingredients.length; i++) {
-                $('#ingredientsList').append("<li>" + currentRecipe.ingredients[i] + "</li>");
+            for (var i = 0; i < currentRecipe.units.length; i++) {
+                $('#ingredientsList').append("<li>" + currentRecipe.units[i] + "</li>");
             }
 
             $('#image').html("<img src=" + currentRecipe.image +">" + "</img>");
-            $('#instructions').text(currentRecipe.instructions);
+            $('#instructions').html(currentRecipe.instructions);
         }
     })
 })
@@ -127,10 +145,20 @@ $('#buyIngredients').on('click', function() {
         ingredients: currentRecipe.ingredients,
         // id: recipeID,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
-      });
+      });    
 })
 
+$("body").on('click', ".defaultRecipe", function(){
+    var inputItem = $(this).text();
+    APICall(inputItem);
+});
 
+$('body').on('click', ".carouselImages", function(){
+    
+    var inputItem = $(this).attr("alt");
+    APICall(inputItem);
+    console.log(inputItem);
+})
 
 //TODO 
 
