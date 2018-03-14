@@ -40,7 +40,8 @@ body {
 }
 
 .right-panel, .left-panel {
-	height: 85vh;
+	min-height: 85vh;
+	height: auto;
 	text-align: center;
 }
 
@@ -126,14 +127,6 @@ margin-bottom: 8px;
 
 .shoppingList {
 	width: 100%;
-}
-
-table td {
-
-}
-
-td {
-
 }
 
 .productTable {
