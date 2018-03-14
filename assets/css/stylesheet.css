@@ -30,7 +30,6 @@ body {
     margin-right: 0px;
 }
 
-
 .carousel-control {
     opacity: .1;
     margin-left: 100px;
@@ -60,8 +59,13 @@ body {
 }
 
 .center-panel {
-	height: 90vh;
+	height: auto;
+	min-height: 90vh;
 	text-align: center;
+}
+
+h2 {
+	font-family: 'Shadows Into Light', cursive;
 }
 
 [class*='col-'] {
@@ -78,7 +82,10 @@ body {
 	/* font-family: 'Dancing Script', cursive; */
 	/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 	color: #827E38;
+<<<<<<< HEAD
 	
+=======
+>>>>>>> b1ac421b187e09994f62789f4bbc340b63688b03
 }
 
 
@@ -97,8 +104,9 @@ body {
 
 .listItems {
 	width: 100%;
-	background-color: grey;
-	height: 75vh;
+	background-color: whitesmoke;
+	min-height: 75vh;
+	height: auto;
 }
 
 .mainContainer {
@@ -136,20 +144,27 @@ body {
 }
 
 table td {
+
+}
+
+td {
+
+}
+
+.productTable {
 	border: 1px solid black;
 	text-align: center;
 }
 
-td {
+.productTable td {
 	height: 7vh;
 	width: 40%;
+	border: 1px solid black;
 }
 
 .listImage {
 	width: 33%;
-	
 }
-
 
 .image-data {
 	width: 33%;

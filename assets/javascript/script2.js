@@ -37,6 +37,7 @@ $(document).ready(function () {
 			// api url pulling from food only queries
 			var queryURL = "http://api.walmartlabs.com/v1/search?query=" + inputItem + "&format=json&apiKey=t4a2y6c96t4m3mffyc4fmvcc&categoryId=976759";
 
+			console.log(queryURL);
 			$.ajax({
 				url: queryURL,
 				method: "GET",
@@ -55,7 +56,6 @@ $(document).ready(function () {
 				}
 			}
 
-
 			);
 		});
 	};
@@ -63,8 +63,9 @@ $(document).ready(function () {
 	findingItems();
 
 	function addItem(thumbNail, foodName, price) {
-		$("#addedItems").append("<tr><td><img src='" + thumbNail + "' /></td><td>" + foodName + "</td><td>" + price + "</td></tr>");
+		$("#addedItems").append("<tr><td><img src='" + thumbNail + "' /></td><td>" + foodName + "</td><td>" + price + "</td></tr><br>");
 	};
+
 	function appendItems() {
 		for (var l = 0; l < foodItem.length; l++) {
 			console.log("food Items", foodItem[l]);
