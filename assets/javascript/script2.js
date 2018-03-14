@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 			var inputItem = $(this).text();
 			// api url pulling from food only queries
-			var queryURL = "https://api.walmartlabs.com/v1/search?query=" + inputItem + "&format=json&apiKey=t4a2y6c96t4m3mffyc4fmvcc&categoryId=976759";
+			var queryURL = "http://api.walmartlabs.com/v1/search?query=" + inputItem + "&format=json&apiKey=t4a2y6c96t4m3mffyc4fmvcc&categoryId=976759";
 			$.ajax({
 				url: queryURL,
 				method: "GET",
