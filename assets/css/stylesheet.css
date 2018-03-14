@@ -41,7 +41,7 @@ body {
 }
 
 .right-panel, .left-panel {
-	height: 70vh;
+	height: 85vh;
 	text-align: center;
 }
 
@@ -54,7 +54,7 @@ body {
 }
 
 .center-panel {
-	height: 60vh;
+	height: 90vh;
 	text-align: center;
 }
 
@@ -62,6 +62,7 @@ body {
 	position: relative;
 }
 
+<<<<<<< HEAD
 .recipeList {
 	/* background-color: red; */
 	width: 100%;
@@ -72,6 +73,12 @@ body {
 	/* font-family: 'Dancing Script', cursive; */
 	/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 	color: #827E38;
+=======
+.recipeList, .addedItems {
+	background-color: grey;
+	width: 100%;
+	height: 70vh;
+>>>>>>> 3aa719e711941c82b63fe2c7cae9cbb6bf148005
 }
 
 .neededContainer {
@@ -89,8 +96,8 @@ margin-bottom: 8px;
 
 .listItems {
 	width: 100%;
-	background-color: red;
-	height: 40vh;
+	background-color: grey;
+	height: 75vh;
 }
 
 .mainContainer {
@@ -99,6 +106,7 @@ margin-bottom: 8px;
 	margin-left: 200px;
 }
 
+<<<<<<< HEAD
 .footer {
     position: relative;
     bottom: 0px;
@@ -117,4 +125,32 @@ margin-bottom: 8px;
 
 .instructionsStyle {
 	color: #827E38;
+=======
+.shoppingList {
+	width: 100%;
+}
+
+table td {
+	border: 1px solid black;
+	text-align: center;
+}
+
+td {
+	height: 7vh;
+	width: 40%;
+}
+
+.listImage {
+	width: 33%;
+
+}
+
+.image-data {
+	width: 33%;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 40554c728f609ab72e7ca33e9223c5e464b1c71b
+>>>>>>> 3aa719e711941c82b63fe2c7cae9cbb6bf148005
 }
