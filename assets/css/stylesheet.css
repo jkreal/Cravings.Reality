@@ -30,7 +30,6 @@ body {
     margin-right: 0px;
 }
 
-
 .carousel-control {
     opacity: .1;
     margin-left: 110px;
@@ -54,8 +53,13 @@ body {
 }
 
 .center-panel {
-	height: 90vh;
+	height: auto;
+	min-height: 90vh;
 	text-align: center;
+}
+
+h2 {
+	font-family: 'Dancing Script', cursive;
 }
 
 [class*='col-'] {
@@ -90,7 +94,8 @@ margin-bottom: 8px;
 .listItems {
 	width: 100%;
 	background-color: grey;
-	height: 75vh;
+	min-height: 75vh;
+	height: auto;
 }
 
 .mainContainer {
@@ -98,7 +103,6 @@ margin-bottom: 8px;
 	justify-content: space-evenly;
 	margin-left: 200px;
 }
-
 
 .footer {
     position: relative;
@@ -125,18 +129,25 @@ margin-bottom: 8px;
 }
 
 table td {
+
+}
+
+td {
+
+}
+
+.productTable {
 	border: 1px solid black;
 	text-align: center;
 }
 
-td {
+.productTable td {
 	height: 7vh;
 	width: 40%;
 }
 
 .listImage {
 	width: 33%;
-
 }
 
 .image-data {
