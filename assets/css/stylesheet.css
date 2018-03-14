@@ -13,6 +13,11 @@ body {
 	font-size: 75px;
 }
 
+.titleStyle {
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #827E38;
+}
+
 .carouselImages {
     display: block;
     margin-left: auto;
@@ -82,10 +87,6 @@ h2 {
 	/* font-family: 'Dancing Script', cursive; */
 	/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 	color: #827E38;
-<<<<<<< HEAD
-	
-=======
->>>>>>> b1ac421b187e09994f62789f4bbc340b63688b03
 }
 
 

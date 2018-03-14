@@ -71,7 +71,7 @@ function APICall(itemName) {
         success: function (response) {
             //clears the recipe table
             $("#recipe").empty();
-            $('#recipeList').html('<tr><th><h3>Select Your Craving!<h3></th></tr>');
+            $('#recipeList').html('<tr><th><h3 class="animated flash">Select Your Craving!</h3></th></tr>');
             // console.log("test", response.results[1]);
             for (var i = 0; i < response.results.length; i++) {
                 var recipeTitle = response.results[i].title;
@@ -127,7 +127,7 @@ $("body").on("click", ".recipeTitle", function () {
             // console.log(response);
             console.log(currentRecipe.ingredients)
             // added by spencer
-            $('#title').html("<h1>" + currentRecipe.title + "</h1>");
+            $('#title').html("<h1 class='titleStyle animated pulse'>" + currentRecipe.title + "</h1><br>");
             for (var i = 0; i < currentRecipe.units.length; i++) {
                 $('#ingredientsList').append("<li>" + currentRecipe.units[i] + "</li>");
             }
