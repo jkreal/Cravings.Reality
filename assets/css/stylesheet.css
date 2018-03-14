@@ -13,11 +13,20 @@ body {
     margin-right: auto;
 }
 
-.searchBar {
+.bottomSearchBar {
     width: 60%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+.carousel-control {
+    /* opacity: 10; */
+    /*margin-left: 120px;
+    margin-right: 120px; */
+    background-color: yellow;
+
 }
 
 .right-panel, .left-panel {
@@ -63,6 +72,7 @@ margin-bottom: 8px;
 	display: flex;
 	justify-content: space-evenly;
 	margin-left: 200px;
+<<<<<<< HEAD
 }
 
 .shoppingList {
@@ -86,4 +96,6 @@ td {
 
 .image-data {
 	width: 33%;
+=======
+>>>>>>> 762ae11d3366c3851b2d20bdc77bd7f804af8933
 }
