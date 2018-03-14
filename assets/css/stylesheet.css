@@ -44,7 +44,7 @@ body {
 }
 
 .recipeList, .addedItems {
-	background-color: red;
+	background-color: grey;
 	width: 100%;
 	height: 70vh;
 }
@@ -64,7 +64,7 @@ margin-bottom: 8px;
 
 .listItems {
 	width: 100%;
-	background-color: red;
+	background-color: grey;
 	height: 75vh;
 }
 
@@ -72,7 +72,6 @@ margin-bottom: 8px;
 	display: flex;
 	justify-content: space-evenly;
 	margin-left: 200px;
-<<<<<<< HEAD
 }
 
 .shoppingList {
@@ -96,6 +95,4 @@ td {
 
 .image-data {
 	width: 33%;
-=======
->>>>>>> 762ae11d3366c3851b2d20bdc77bd7f804af8933
 }
