@@ -29,9 +29,14 @@ $(document).ready(function () {
 			loadingImg.text('loading...');
 			$("#addedItems").append(loadingImg);
 
+			$(this).addClass("animated tada");
+			setTimeout(function() {
+				$(this).removeClass("animated tada");
+			}, 300);
+
 			var inputItem = $(this).text();
 			// api url pulling from food only queries
-			var queryURL = "http://api.walmartlabs.com/v1/search?query=" + inputItem + "&format=json&apiKey=t4a2y6c96t4m3mffyc4fmvcc&categoryId=976759";
+			var queryURL = "https://api.walmartlabs.com/v1/search?query=" + inputItem + "&format=json&apiKey=t4a2y6c96t4m3mffyc4fmvcc&categoryId=976759";
 			$.ajax({
 				url: queryURL,
 				method: "GET",
@@ -71,5 +76,21 @@ $(document).ready(function () {
 
 $(document).on("click", ".foodName", function () {
 	foodName = this;
+	
 	$("#addedList").append(foodName);
+
+	$(this).addClass('animated pulse');
+	//wait amount of time
+	setTimeout(function(){
+		$(this).removeClass('animated ' + animation)
+	}, 300);
+
+});
+
+$(document).on("click", "#recipeList", function() {
+	$(this).addClass('animated pulse');
+	setTimeout(function() {
+		$(this).removeClass('animated pulse');
+		$(this).hide();
+	}, 300);
 });
