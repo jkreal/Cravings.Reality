@@ -14,6 +14,29 @@ $(document).ready(function () {
 	var foodItem = [];
 	var foodId = null;
 
+	$(document).on("click", ".foodName", function () {
+		foodName = this;
+		
+		$("#addedList").append(foodName);
+	
+		$(this).addClass('animated pulse');
+		//wait amount of time
+		setTimeout(function(){
+			$(this).removeClass('animated pulse');
+		}, 300);
+
+		setTime();
+	
+	});
+	
+	$(document).on("click", "#recipeList", function() {
+		$(this).addClass('animated pulse');
+		setTimeout(function() {
+			$(this).removeClass('animated pulse');
+			$(this).hide();
+		}, 300);
+	});
+
 	// on click for sumbit change for loading page
 	function findingItems(event) {
 
@@ -74,23 +97,11 @@ $(document).ready(function () {
 	};
 });
 
-$(document).on("click", ".foodName", function () {
-	foodName = this;
-	
-	$("#addedList").append(foodName);
-
-	$(this).addClass('animated pulse');
-	//wait amount of time
-	setTimeout(function(){
-		$(this).removeClass('animated ' + animation)
-	}, 300);
-
-});
-
-$(document).on("click", "#recipeList", function() {
-	$(this).addClass('animated pulse');
-	setTimeout(function() {
-		$(this).removeClass('animated pulse');
-		$(this).hide();
-	}, 300);
-});
+function setTime () {
+	var time = moment().valueOf();
+	time = moment(time).format("hh:mm");
+	var timeLine = $('#time-text');
+	timeLine.textContent = time;
+	$('#time-line').text('Last item added at: ');
+	$('#time').text(time);
+}
