@@ -7,7 +7,7 @@ body {
 		align-content: center;
 }
 
-.heading {
+h1 {
 	font-family: 'Dancing Script', cursive;
 	color: #827E38;
 	font-size: 75px;
@@ -158,4 +158,20 @@ h2 {
 
 .image-data {
 	width: 33%;
+}
+
+.heading {
+	font-family: 'Dancing Script', cursive;
+	color: #827E38;
+	font-size: 75px;
+}
+
+.time-div {
+	height: 50px;
+	width: 18em;
+	background-color: whitesmoke;
+}
+
+.addedItems {
+	width: 100%;
 }
